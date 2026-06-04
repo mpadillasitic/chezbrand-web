@@ -841,7 +841,12 @@ section{position:relative}
         </dl>
       </div>
 
-      <form class="form reveal" id="contactForm" novalidate>
+      <form class="form reveal" id="contactForm" action="https://formsubmit.co/ajax/info@chez-brand.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Nueva consulta desde Chez-Brand" />
+        <input type="hidden" name="_cc" value="ngarcia@chez-brand.com,mauriciop@chez-brand.com" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="row-2">
           <div class="field">
             <label for="f-nombre">Nombre</label>
@@ -1078,17 +1083,19 @@ section{position:relative}
     return ok;
   };
 
-  form.querySelectorAll('input,select,textarea').forEach(el => {
+  const formFields = form.querySelectorAll('input:not([type="hidden"]):not([name="_honey"]),select,textarea');
+
+  formFields.forEach(el => {
     el.addEventListener('blur', () => validateField(el));
     el.addEventListener('input', () => {
       if (el.closest('.field').classList.contains('invalid')) validateField(el);
     });
   });
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     let allOk = true;
-    form.querySelectorAll('input,select,textarea').forEach(el => {
+    formFields.forEach(el => {
       if (!validateField(el)) allOk = false;
     });
     if (!allOk) {
@@ -1096,11 +1103,31 @@ section{position:relative}
       if (firstInvalid) firstInvalid.focus();
       return;
     }
-    success.classList.add('is-shown');
-    form.querySelectorAll('input,select,textarea').forEach(el => el.value = '');
-    const rect = success.getBoundingClientRect();
-    const target = window.scrollY + rect.top - (window.innerHeight/2) + (rect.height/2);
-    window.scrollTo({top: Math.max(0, target), behavior:'smooth'});
+
+    const submit = form.querySelector('.submit');
+    submit.disabled = true;
+    submit.style.opacity = '.7';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (!response.ok) throw new Error('FormSubmit request failed');
+
+      success.classList.add('is-shown');
+      formFields.forEach(el => el.value = '');
+      const rect = success.getBoundingClientRect();
+      const target = window.scrollY + rect.top - (window.innerHeight/2) + (rect.height/2);
+      window.scrollTo({top: Math.max(0, target), behavior:'smooth'});
+    } catch (err) {
+      alert('No pudimos enviar tu consulta en este momento. Por favor escríbenos a info@chez-brand.com.');
+    } finally {
+      submit.disabled = false;
+      submit.style.opacity = '';
+    }
   });
 })();
 </script>
