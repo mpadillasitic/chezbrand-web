@@ -307,23 +307,9 @@ section{position:relative}
   background:var(--paper);
 }
 .product-mark{
-  position:relative; width:200px; height:140px;
+  width:min(100%, 340px);
 }
-.product-mark .blob{
-  position:absolute; width:96px; height:96px; border-radius:50%;
-  mix-blend-mode:multiply; filter:saturate(1.05);
-}
-.product-mark .b1{background:#7b3fa0; left:0; top:10px}
-.product-mark .b2{background:#e63946; left:48px; top:0}
-.product-mark .b3{background:#f6d860; left:96px; top:10px}
-.product-mark .label{
-  position:absolute; right:0; bottom:0;
-  font-family:var(--f-display); font-weight:700; font-stretch:expanded;
-  color:var(--navy);
-  display:flex; flex-direction:column; line-height:.9; text-align:right;
-}
-.product-mark .label .big{font-size:42px}
-.product-mark .label .sub{font-size:13px; letter-spacing:.18em; color:var(--gray); margin-top:6px; font-weight:700; text-transform:uppercase}
+.product-mark img{display:block; width:100%; height:auto}
 
 .product-card h3{
   font-family:var(--f-display); font-weight:700; font-stretch:expanded;
@@ -696,14 +682,8 @@ section{position:relative}
     <div class="grid-12">
       <article class="product-card reveal">
         <div class="left">
-          <div class="product-mark" aria-hidden="true">
-            <span class="blob b1"></span>
-            <span class="blob b2"></span>
-            <span class="blob b3"></span>
-            <div class="label">
-              <span class="big">24/7</span>
-              <span class="sub">Pago al Paso</span>
-            </div>
+          <div class="product-mark">
+            <img loading="lazy" decoding="async" src="assets/logos/pago-al-paso-24-7.jpg" alt="Pago al Paso 24/7" />
           </div>
 
           <div>
