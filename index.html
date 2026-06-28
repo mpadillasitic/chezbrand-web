@@ -509,7 +509,22 @@ section{position:relative}
   display:inline-flex; align-items:center; gap:10px;
   color:rgba(255,255,255,.5);
 }
-.site-credit svg{width:42px; height:auto; display:block; color:rgba(255,255,255,.78)}
+.site-credit a{
+  display:inline-flex; align-items:center; color:rgba(255,255,255,.78);
+  transition:color .2s var(--ease), transform .15s var(--ease);
+}
+.site-credit a:hover{color:#fff; transform:translateY(-1px)}
+.site-credit a:active{transform:translateY(0)}
+.novari-mark{
+  width:48px; height:28px; overflow:hidden;
+  display:inline-flex; align-items:center;
+}
+.novari-mark img{
+  height:34px; width:auto; max-width:none;
+  opacity:.82; filter:none;
+  transition:opacity .2s var(--ease);
+}
+.site-credit a:hover .novari-mark img{opacity:1}
 @media (min-width:900px){
   .footer-grid{grid-template-columns:1.2fr 1fr}
 }
@@ -979,11 +994,11 @@ section{position:relative}
       <span>© 2025 Chez-Brand. Todos los derechos reservados.</span>
       <span class="site-credit">
         Sitio web realizado por
-        <svg viewBox="0 0 74 38" aria-label="Novari" role="img">
-          <path d="M12.2 10 3 19l9.2 9" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M61.8 10 71 19l-9.2 9" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M28 31V7l18 24V7" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <a href="https://www.novari.digital/" target="_blank" rel="noopener noreferrer" aria-label="Sitio web de Novari">
+          <span class="novari-mark" aria-hidden="true">
+            <img src="assets/logos/novari.png" alt="" />
+          </span>
+        </a>
       </span>
     </div>
   </div>
