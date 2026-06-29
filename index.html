@@ -5,6 +5,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Chez-Brand — Ecosistemas digitales para economías emergentes</title>
 <meta name="description" content="Chez-Brand es una empresa tecnológica latinoamericana que diseña y desarrolla ecosistemas digitales para impulsar negocios en economías emergentes." />
+<meta name="theme-color" content="#030022" />
+<link rel="canonical" href="https://chez-brand.com/" />
+
+<link rel="icon" type="image/png" href="assets/brand/isologo-chez-brand-cropped.png" />
+<link rel="apple-touch-icon" href="assets/brand/isologo-chez-brand-cropped.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://chez-brand.com/" />
+<meta property="og:site_name" content="Chez-Brand" />
+<meta property="og:title" content="Chez-Brand — Ecosistemas digitales para economías emergentes" />
+<meta property="og:description" content="Diseñamos infraestructura, software y plataformas seguras para impulsar negocios en crecimiento en Latinoamérica." />
+<meta property="og:image" content="https://chez-brand.com/assets/brand/logo-chez-brand-cropped.png" />
+<meta property="og:image:width" content="1862" />
+<meta property="og:image:height" content="420" />
+<meta property="og:image:alt" content="Logo oficial de Chez-Brand" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Chez-Brand — Ecosistemas digitales para economías emergentes" />
+<meta name="twitter:description" content="Diseñamos infraestructura, software y plataformas seguras para impulsar negocios en crecimiento en Latinoamérica." />
+<meta name="twitter:image" content="https://chez-brand.com/assets/brand/logo-chez-brand-cropped.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -95,9 +115,8 @@ input,select,textarea{font:inherit; color:inherit}
   border-bottom-color:var(--line-l);
 }
 .nav-inner{display:flex; align-items:center; justify-content:space-between; height:72px}
-.logo{display:inline-flex; align-items:center; gap:10px; color:var(--gray); font-weight:700; letter-spacing:-.01em; font-size:18px}
-.logo svg{display:block}
-.logo b{font-weight:700}
+.logo{display:inline-flex; align-items:center}
+.logo img{display:block; width:clamp(148px, 12vw, 178px); height:auto}
 .nav-links{display:none; gap:36px; font-size:14px; color:var(--ink); font-weight:400}
 .nav-links a{position:relative; padding:6px 0; color:var(--gray); transition:color .2s var(--ease)}
 .nav-links a:hover{color:var(--ink)}
@@ -470,8 +489,7 @@ section{position:relative}
   padding:80px 0 28px;
 }
 .footer-grid{display:grid; grid-template-columns:1fr; gap:48px; align-items:start}
-.footer .logo{color:#fff}
-.footer .logo svg path[data-c="gray"]{fill:#fff}
+.footer .logo img{width:clamp(154px, 13vw, 188px)}
 .footer-tag{color:rgba(255,255,255,.6); font-size:14px; max-width:340px; margin-top:14px; font-weight:300}
 .footer-cols{display:grid; grid-template-columns:1fr 1fr; gap:32px}
 .footer-cols h5{font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.5); margin:0 0 14px; font-weight:700}
@@ -558,9 +576,7 @@ section{position:relative}
 <template id="__bundler_thumbnail" data-bg-color="#030022">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
     <rect width="1200" height="800" fill="#030022"/>
-    <path d="M470 380 L760 290 L660 480 L612 410 Z" fill="#2174ee"/>
-    <path d="M612 410 L660 480 L760 290 Z" fill="#0e00b7"/>
-    <text x="600" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="64" letter-spacing="2" fill="#85b3f5">CHEZ-BRAND</text>
+    <image href="assets/brand/logo-chez-brand-cropped.png" x="220" y="300" width="760" height="172" preserveAspectRatio="xMidYMid meet"/>
   </svg>
 </template>
 
@@ -570,13 +586,7 @@ section{position:relative}
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a class="logo" href="#top" aria-label="Chez-Brand inicio">
-      <!-- paper plane bicolor -->
-      <svg width="34" height="22" viewBox="0 0 34 22" aria-hidden="true">
-        <path d="M2 11 L32 1 L22 21 L17 13 Z" fill="#2174ee"/>
-        <path d="M17 13 L22 21 L32 1 Z" fill="#0e00b7"/>
-        <path d="M2 11 L17 13 L32 1" fill="none" stroke="#0e00b7" stroke-width=".6" opacity=".35"/>
-      </svg>
-      <span data-c="gray" style="color:var(--gray)">Chez<b style="font-weight:700">-Brand</b></span>
+      <img src="assets/brand/logo-chez-brand-cropped.png" alt="Chez-Brand" />
     </a>
 
     <nav class="nav-links" aria-label="Principal">
@@ -945,11 +955,7 @@ section{position:relative}
     <div class="footer-grid">
       <div>
         <a class="logo" href="#top" aria-label="Chez-Brand inicio">
-          <svg width="34" height="22" viewBox="0 0 34 22" aria-hidden="true">
-            <path d="M2 11 L32 1 L22 21 L17 13 Z" fill="#2174ee"/>
-            <path d="M17 13 L22 21 L32 1 Z" fill="#0e00b7"/>
-          </svg>
-          <span data-c="gray">Chez<b>-Brand</b></span>
+          <img src="assets/brand/logo-chez-brand-cropped.png" alt="Chez-Brand" />
         </a>
         <p class="footer-tag">Empresa tecnológica latinoamericana. Diseñamos y desarrollamos ecosistemas digitales para impulsar negocios en economías emergentes.</p>
       </div>
