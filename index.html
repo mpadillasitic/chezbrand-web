@@ -299,7 +299,7 @@ section{position:relative}
 }
 .product-card .left{
   padding:clamp(28px, 4vw, 56px);
-  display:flex; flex-direction:column; gap:28px;
+  display:flex; flex-direction:column; justify-content:center; gap:34px;
   border-bottom:1px solid var(--line-l);
 }
 .product-card .right{
@@ -307,7 +307,8 @@ section{position:relative}
   background:var(--paper);
 }
 .product-mark{
-  width:min(100%, 340px);
+  width:min(100%, 240px);
+  align-self:center;
 }
 .product-mark img{display:block; width:100%; height:auto}
 
@@ -316,6 +317,8 @@ section{position:relative}
   font-size:clamp(28px, 3.4vw, 44px); line-height:1; margin:0; letter-spacing:-.005em;
 }
 .product-card p{color:var(--gray); font-size:15.5px; margin:0; max-width:520px}
+.product-copy{width:100%; align-self:center}
+.product-copy p + p{margin-top:14px}
 
 .product-feats{
   display:grid; grid-template-columns:1fr; gap:0;
@@ -337,17 +340,6 @@ section{position:relative}
 .product-feats .d{color:var(--gray); font-size:14px; display:block; margin-top:4px}
 
 .product-feats ul,.product-feats{padding-left:0; margin:0}
-
-.product-meta{
-  display:flex; flex-wrap:wrap; gap:10px;
-}
-.tag{
-  display:inline-flex; align-items:center; gap:6px;
-  padding:6px 12px; border-radius:var(--r-pill);
-  background:#fff; border:1px solid var(--line-l);
-  font-size:12px; letter-spacing:.06em; color:var(--gray); font-weight:700;
-}
-.tag .d{width:6px; height:6px; border-radius:50%; background:var(--blue)}
 
 @media (min-width:900px){
   .product-card{grid-template-columns:1.05fr 1fr}
@@ -733,19 +725,19 @@ section{position:relative}
       <article class="product-card reveal">
         <div class="left">
           <div class="product-mark">
-            <img loading="lazy" decoding="async" src="assets/logos/pago-al-paso-24-7.jpg" alt="Pago al Paso 24/7" />
+            <img loading="lazy" decoding="async" src="assets/logos/pago-al-paso-24-7.png" alt="Pago al Paso 24/7" />
           </div>
 
-          <div>
-            <p style="margin-top:14px">
-              Pasarela de pagos en línea operada por Chez-Brand. Procesa transacciones digitales de forma continua y se integra a comercios y plataformas mediante API. Pensada para entornos transaccionales de la región.
+          <div class="product-copy">
+            <p>
+              <strong>Pago al Paso 24/7</strong> es la plataforma de pagos digitales de Chez-Brand, desarrollada para conectar empresas, comercios y plataformas mediante una infraestructura segura, escalable y disponible de forma continua.
             </p>
-          </div>
-
-          <div class="product-meta">
-            <span class="tag"><span class="d"></span>Pasarela de pagos</span>
-            <span class="tag"><span class="d" style="background:#7b3fa0"></span>API</span>
-            <span class="tag"><span class="d" style="background:#e63946"></span>Operación 24/7</span>
+            <p>
+              Su arquitectura basada en APIs facilita la integración con aplicaciones y sistemas empresariales, incorporando capacidades multimoneda para operar en distintos mercados.
+            </p>
+            <p>
+              Diseñada para entornos transaccionales de alta disponibilidad, ofrece una base tecnológica confiable para impulsar el crecimiento del ecosistema digital.
+            </p>
           </div>
         </div>
 
